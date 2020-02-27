@@ -1,4 +1,5 @@
 import util from "../helpers/util.js"
+import bearBuilder from "./river.js"
 
 const bearFormDomStringBuilder = () => {
     let domString = ''
@@ -23,8 +24,19 @@ const bears = [
     {
         id: 'bear1',
         name: 'Fred',
-        imgUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'
+        imgUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    },
+    {
+        id: 'bear1',
+        name: 'Fred',
+        imgUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+    },
+    {
+        id: 'bear1',
+        name: 'Fred',
+        imgUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
     }
+
 
 ]
 
@@ -43,6 +55,7 @@ const submitForm = (e) => {
     }
     bears.push(brandNewBear)
     document.getElementById('full-bear-form').reset();
+    bearBuilder.bearDomStringBuilder(bears);
     console.log(bears) 
 }
 
