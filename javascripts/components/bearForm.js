@@ -1,5 +1,6 @@
 import util from "../helpers/util.js"
 import bearBuilder from "./river.js"
+import newBear from "../helpers/bearData.js"
 
 const bearFormDomStringBuilder = () => {
     let domString = ''
@@ -27,36 +28,34 @@ const bears = [
         imgUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
     },
     {
-        id: 'bear1',
+        id: 'bear2',
         name: 'Fred',
         imgUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
     },
     {
-        id: 'bear1',
+        id: 'bear3',
         name: 'Fred',
         imgUrl: 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
     }
-
-
 ]
-
-console.log(bears)
 
 const getBears = () => {
     return bears
 }
 
-const submitForm = (e) => {
-    e.preventDefault();
+const submitForm = (event) => {
+    event.preventDefault();
     const brandNewBear = {
-        id: `bear${bears.length + 1}`,
-        name: document.getElementById("bear-name").value,
+        id: `bear${Math.random}`,
+        name: document.getElementById('bear-name').value,
         imgUrl: document.getElementById('bear-image').value
     }
     bears.push(brandNewBear)
+    pushBearsIntoArray.pushBears(brandNewBear)
     document.getElementById('full-bear-form').reset();
+    return brandNewBear
     bearBuilder.bearDomStringBuilder(bears);
-    console.log(bears) 
+    // console.log(bears) 
 }
 
 export default { bearFormDomStringBuilder, getBears }
