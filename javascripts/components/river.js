@@ -1,6 +1,5 @@
 import util from "../helpers/util.js"
-// import getBears from "../helpers/bearData.js"
-import getBears from "./bearForm.js"
+import getBears from "../helpers/bearData.js"
 
 const bearDomStringBuilder = () => {
     let domString = '';
