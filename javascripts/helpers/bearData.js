@@ -1,9 +1,8 @@
-// import arrayOfBears from "../components/bearForm.js"
+const getBears = () => {
+    return bears;
+};
 
-// const getBears = () => {
-//     return arrayOfBears
-// };
+const bears = [];
 
-// console.log(arrayOfBears)
 
-// export default { getBears }
+export default { getBears };

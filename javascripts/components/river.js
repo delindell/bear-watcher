@@ -1,19 +1,25 @@
 import util from "../helpers/util.js"
-// import bears from "../helpers/bearData.js"
-import getBears from "./bearForm.js"
+import getBears from "../helpers/bearData.js"
+
+
 
 const bearDomStringBuilder = () => {
+    let allBears = getBears.getBears()
     let domString = '';
-    getBears.getBears().forEach((bear) => {
-        domString += '<div class="card col-3" style="width: 18rem;">'
-        domString += `<img src="${bear.imgUrl}" class="card-img-top" alt="...">`
-        domString += `<div class="card-body" id="${bear.id}>`
-        domString += `<h5 class="card-title">${bear.name}</h5>`
-        domString += '</div>'
-        domString += '</div>'
-        console.log(bear)        
+    allBears.forEach((bear) => {
+        domString += `<div class="col-4">`
+        domString += `<div id="${bear.id}" class="bear-card">`
+        domString += `<img src="${bear.imgUrl}" class="card-img-top bear-photo" alt="image-of-bear">`
+        domString += `<div class="card-body">`;
+        domString += `<h2 class="card-title" id="bear-name">${bear.name}</h2>`;
+        domString += '</div>';        
+        domString += `<button class="btn btn-danger catch-fish-button" id="${bear.id}">Catch Fish</button>`
+        domString += '</div>';
+        domString += '</div>';      
     });
-    util.printToDom('bear-river', domString)
-}
+    util.printToDom('bear-river', domString);
+};
+
+
 
 export default { bearDomStringBuilder }
