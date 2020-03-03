@@ -17,7 +17,7 @@ const bearFormDomStringBuilder = () => {
     domString += '</div>';
     util.printToDom('bear-form', domString);
     $('#bear-submit-button').click(submitForm);
-}
+};
 
 const submitForm = (e) => {
     e.preventDefault();

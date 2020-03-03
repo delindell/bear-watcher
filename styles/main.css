@@ -3,13 +3,23 @@ body {
 }
 
 .bear-card {
-    margin-bottom: 15px;
+    margin: 15px;
 }
 
-button {
-    text-align: center;
+#bear-submit-button {
+    min-width: 750px;
+    justify-content: center;
 }
 
 h2 {
+    justify-content: center;    
+}
+
+#full-bear-form {
+    min-width: 750px;
+    justify-content: center;
+}
+
+#bear-name {
     text-align: center;
 }

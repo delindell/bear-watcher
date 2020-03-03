@@ -5,4 +5,4 @@ const getBears = () => {
 const bears = [];
 
 
-export default { getBears }
+export default { getBears };
