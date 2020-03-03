@@ -4,7 +4,7 @@
 This project explored the ES6 module system. I created a file structure to compartmentalize my different JS files and have them all be able to communicate with one another. It is a simple form that takes input from the user, stores the data, and prints it out onto a card on the page.
 
 ## Screenshots
-![Pets](screenshots/pets.png)
+![Bears](screenshots/bearWatcher.png)
 
 ## How to run
 1. Clone down this repo
