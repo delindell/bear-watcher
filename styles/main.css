@@ -1,3 +1,15 @@
 body {
     background-color: aqua;
 }
+
+.bear-card {
+    margin-bottom: 15px;
+}
+
+button {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}

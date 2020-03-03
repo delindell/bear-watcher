@@ -2,43 +2,34 @@ import util from "../helpers/util.js"
 import bearBuilder from "./river.js"
 import bearData from "../helpers/bearData.js"
 
-console.log('hello')
-
 const bearFormDomStringBuilder = () => {
-    let domString = ''
-    domString += '<form id="full-bear-form">'
-    domString += '<div class="form-group">'
-    domString += '<input type="text" class="form-control" id="bear-name" aria-describedby="bearName" placeholder="Enter Bear Name">'
-    domString += '</div>'
-    domString += '<div class="form-group">'
-    domString += '<input type="text" class="form-control" id="bear-image" placeholder="Bear Image Url">'
-    domString += '</div>'
-    domString += '<button type="submit" class="btn btn-primary" id="bear-submit-button">Submit</button>'
-    domString += '</form>'
-    util.printToDom('bear-form', domString)
-    formEvent()
+    let domString = '';
+    domString += '<div class="d-flex justify-content-center">'
+    domString += '<form id="full-bear-form">';
+    domString += '<div class="form-group">';
+    domString += '<input type="text" class="form-control" id="bear-name" aria-describedby="bearName" placeholder="Enter Bear Name">';
+    domString += '</div>';
+    domString += '<div class="form-group">';
+    domString += '<input type="text" class="form-control" id="bear-image" placeholder="Bear Image Url">';
+    domString += '</div>';
+    domString += '<button type="submit" class="btn btn-primary text-align-center d-flex" id="bear-submit-button">Submit</button>';
+    domString += '</form>';
+    domString += '</div>';
+    util.printToDom('bear-form', domString);
+    $('#bear-submit-button').click(submitForm);
 }
 
-const formEvent = () => {
-    document.getElementById('bear-submit-button').addEventListener('click', submitForm)
-}
-
-
-
-
-const submitForm = (event) => {
-    console.log('hellow')
-    event.preventDefault();
-    const bears = bearData.getBears()
+const submitForm = (e) => {
+    e.preventDefault();
+    const bears = bearData.getBears();
     const brandNewBear = {
         id: `bear${bears.length + 1}`,
-        name: document.getElementById('bear-name').value,
-        imgUrl: document.getElementById('bear-image').value
-    }
-    bears.push(brandNewBear)
-    console.log(brandNewBear, bears)
-    bearBuilder.bearDomStringBuilder(bears)
-    document.getElementById('full-bear-form').reset();
+        name: $('#bear-name').val(),
+        imgUrl: $('#bear-image').val()
+    };
+    bears.push(brandNewBear);
+    bearBuilder.bearDomStringBuilder(bears);
+    $('#full-bear-form').trigger('reset');
 }
 
 export default { bearFormDomStringBuilder }
